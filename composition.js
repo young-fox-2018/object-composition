@@ -35,6 +35,19 @@ class OtherCookies extends Cookie {
     }
 }
 
+class ChocolateChipCrumbled extends Cookie {
+    constructor(name, ingredients, has_sugar) {
+        super(name, ingredients, has_sugar)
+        this.crumble_count = 200
+    }
+}
+
+class PeanutButterCrumbled extends Cookie {
+    constructor(name, ingredients, has_sugar) {
+        super(name, ingredients, has_sugar)
+        this.crumble_count = 200
+    }
+}
 class CookieFactory {
     static create(option) {
         let result = option.split('\n')
@@ -70,6 +83,12 @@ class CookieFactory {
                     break;
                 case "chocolate chip":
                     arrResult.push(new ChocolateChip("Chocolate Chip", objIngredients, statusGula))
+                    break;
+                case "chocolate chip crumbled":
+                    arrResult.push(new ChocolateChipCrumbled("Chocolate Chip Crumbled", objIngredients, statusGula))
+                    break;
+                case "peanut butter crumbled":
+                    arrResult.push(new PeanutButterCrumbled("Peanut Butter Crumbled", objIngredients, statusGula))
                     break;
                 default:
                     arrResult.push(new OtherCookies(split[counter], objIngredients, statusGula))
@@ -107,8 +126,6 @@ for (let i = 0; i < sugarFreeFoods.length; i++) {
     console.log(
         sugarFreeFoods[i].name
     );
-    
-    
 }
 
 
