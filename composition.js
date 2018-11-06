@@ -79,9 +79,11 @@ class CookieFactory {
 
   static cookieRecommendation(hari , input){
     let arr = []
-    for (let i = 0; i < input.length; i++) {
-      if(input[i].has_sugar === false) {
-        arr.push(input[i])
+    if (hari === 'tuesday') {
+      for (let i = 0; i < input.length; i++) {
+        if(input[i].has_sugar === false) {
+          arr.push(input[i])
+        }
       }
     }
     return arr
