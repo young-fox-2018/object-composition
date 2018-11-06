@@ -65,8 +65,11 @@ class CookieFactory {
             for (let i = 0; i < batchofCookies.length; i++) {
                 if (batchofCookies[i].hasSugar === null){
                     arrFreeSugar.push(batchofCookies[i])
+                } else {
                 }
             }
+        } else {
+            return batchofCookies
         }
 
         return arrFreeSugar
