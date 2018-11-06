@@ -6,7 +6,7 @@ const Ingredient = require('./Ingredient')
 
 class CookieFactory {
     static create ( options ) {
-        // let test = options[0].split('=')
+
         let result = []
         
         for ( let i = 0; i < options.length; i++ ) {
@@ -35,17 +35,16 @@ class CookieFactory {
         }
 
         for ( let i = 0; i < result.length; i++ ) {
-            // console.log(result[i].ingredients.length)
+
             for ( let j = 0; j < result[i].ingredients.length; j++ ) {
                 let ingredientsDetail = result[i].ingredients[j].name
-                // console.log(ingredientsDetail)
+
                 if ( ingredientsDetail === 'sugar' ) {
                     result[i].has_sugar = true
                 }
             }
         }
 
-        // console.log(result)
         return result
     }
 
