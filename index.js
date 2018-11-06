@@ -1,5 +1,6 @@
 const fs = require('fs')
 const { ChocolateChip, ChocolateChipCrumble, PeanutButter, PeanutButterCrumble, OtherCookie } = require('./composition')
+const Ingredients = require('./Ingredients')
 const options = fs.readFileSync('cookies.txt', 'utf8').split("\n")
 
 class CookieFactory {
@@ -13,8 +14,9 @@ class CookieFactory {
             for(let j = 0 ; j < options[iOptions][1].length ; j++){
                 let objIngre = {}
                 options[iOptions][1][j] = options[iOptions][1][j].split(" : ")
-                objIngre[options[iOptions][1][j][1]] = options[iOptions][1][j][0]
-                arrIngre.push(objIngre)
+                objIngre.name = options[iOptions][1][j][1]
+                objIngre.amount = options[iOptions][1][j][0]
+                arrIngre.push(new Ingredients(objIngre))
             }
             // console.log(arrIngre, "-------------------------------")
 
@@ -36,7 +38,33 @@ class CookieFactory {
         }
         return cookieList
     }
+
+
+
+    static cookieRecommendation(str, options){
+    console.log(options, "------------------")
+    let sugarFreeFoods = []
+        if(str === "tuesday"){
+            for(let i = 0 ; i < options.length ; i++){
+                // console.log(options[i]._name, "INI NAMEEE")
+                if(options[i]._has_sugar === false){
+                    sugarFreeFoods.push(options[i])
+                }
+            }
+        }
+        return sugarFreeFoods
+    }
+
+
+
 }
+
 
 let batch_of_cookies = CookieFactory.create(options)
 console.log(batch_of_cookies)
+
+let sugarFreeFoods = CookieFactory.cookieRecommendation("tuesday", batch_of_cookies);
+console.log("sugar free cakes are:")
+for(let i = 0 ; i < sugarFreeFoods.length ; i++){
+    console.log(sugarFreeFoods[i]._name)
+}
