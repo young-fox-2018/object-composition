@@ -2,4 +2,4 @@ peanut butter = 1 cup : flour, 2 cups (gluten): sugar, 2 cups : peanut butterm 1
 chocolate chip = 1 cup : flour, 20 cups : peanut butterm 10 cup :cinnamon, 2 tsp : butter
 chocolate cheese = 1 cup : flour, 20 cups : peanut butterm 10 cup :cinnamon, 2 tsp : butter
 chocolate chip crumbled = 1 cup : flour, 20 cups : peanut butterm 10 cup :cinnamon, 2 tsp : butter
-peanut butter crumbled = 1 cup : flour, 20 cups : peanut butterm 10 cup :cinnamon, 2 tsp : butter
+peanut butter crumbled = 1 cup : flour, 2 cups (gluten): sugar, 2 cups : 20 cups : peanut butterm 10 cup :cinnamon, 2 tsp : butter

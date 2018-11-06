@@ -3,7 +3,9 @@
 const fs = require('fs')
 const ChocolateChip = require('./ChocolateChip')
 const PeanutButter = require('./PeanutButter')
-const OtherCookie = require('./OtherCookie')
+const ChocolateCheese = require('./ChocolateCheese')
+const ChococolateChipCrumbled = require('./ChocolateChipCrumbled')
+const PeanutButterCrumbled = require('./PeanutButterCrumbled')
 const  Ingrident = require('./Ingrident')
 
 class CookieFactory {
@@ -39,12 +41,16 @@ class CookieFactory {
                 arrIngridents.push(instIngrident)
             }
 
-            if (cookiesType === 'peanut butter' || cookiesType === 'peanut butter crumbled') {
+            if (cookiesType === 'peanut butter') {
                 cookie = new PeanutButter(cookiesType, arrIngridents)
-            } else if (cookiesType === 'chocolate chip' || cookiesType === 'chocolate chip crumbled') {
+            } else if (cookiesType === 'chocolate chip') {
                 cookie = new ChocolateChip(cookiesType, arrIngridents)
-            } else {
-                cookie = new OtherCookie(cookiesType, arrIngridents)
+            } else if (cookiesType === 'chocolate cheese' ) {
+                cookie = new ChocolateCheese(cookiesType, arrIngridents)
+            } else if (cookiesType === 'chocolate chip crumbled') {
+                cookie = new ChococolateChipCrumbled(cookiesType, arrIngridents)
+            } else if (cookiesType === 'peanut butter crumbled') {
+                cookie = new PeanutButterCrumbled(cookiesType, arrIngridents)
             }
 
             if (hasSugar) {
@@ -77,5 +83,6 @@ class CookieFactory {
 }
 
 let batchofCookies = CookieFactory.create('cookies.txt')
+console.log(batchofCookies)
 let sugarFreeFoods = CookieFactory.cookieRecommendation('tuesday', batchofCookies)
 console.log(sugarFreeFoods)
