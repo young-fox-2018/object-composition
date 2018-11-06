@@ -82,7 +82,4 @@ class CookieFactory {
     }
 }
 
-let batchofCookies = CookieFactory.create('cookies.txt')
-console.log(batchofCookies)
-let sugarFreeFoods = CookieFactory.cookieRecommendation('tuesday', batchofCookies)
-console.log(sugarFreeFoods)
+module.exports = CookieFactory
