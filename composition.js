@@ -3,46 +3,10 @@
 const fs = require('fs');
 let options = fs.readFileSync('cookies.txt', 'utf8');
 
-class Cookie {
-    constructor(name, ingredients) {
-        this.name = name;
-        this.status = 'mentah';
-        this.ingredients = ingredients;
-        this.has_sugar = null;
-    }
-
-    bake() {
-        this.status = 'selesai dimasak'
-    }
-}
-
-class PeanutButter extends Cookie {
-    constructor(name, ingredients) {
-        super(name, ingredients);
-        this.peanut_count = 100;
-    }
-}
-
-class ChocolateChip extends Cookie {
-    constructor(name, ingredients) {
-        super(name, ingredients);
-        this.choc_chip_count = 200; 
-    }
-}
-
-class OtherCookie extends Cookie {
-    constructor(name, ingredients) {
-        super(name, ingredients);
-        this.other_count = 150;
-    }
-}
-
-class Ingredients {
-    constructor(options) {
-        this.name = options.name
-        this.amount = options.amount
-    }
-}
+const PeanutButter = require('./PeanutButter')
+const ChocolateChip = require('./ChocolateChip')
+const OtherCookie = require('./OtherCookie')
+const Ingredients = require('./Ingredients')
 
 class CookieFactory {
     static create(options) {
